@@ -20,11 +20,9 @@ const circle = require('../src/circle');
         Outra dica: que tal pesquisar se existe um matcher que compara valores próximos?
         Use esse conhecimento para te ajudar a lidar com possíveis problemas que esses testes trarão!
 */
-
 describe('4 - Implemente os casos de teste para a função `circle`', () => {
   it('Verifica se ao receber um raio, a função `circle` retorna um objeto contendo os valores esperados', () => {
-    fail('Teste vazio!');
-    // ESCREVA SEUS TESTES ABAIXO:
+    // Requisitos de Testes:
     // Teste se circle retorna undefined, caso o parâmetro passado não seja um número.
     // Teste se circle retorna um objeto.
     // Teste se o objeto retornado possui 3 propriedades.
@@ -32,5 +30,15 @@ describe('4 - Implemente os casos de teste para a função `circle`', () => {
     // Teste se dentro do objeto retornado, a função retorna uma `key` com `value` igual à circunferência correta para um círculo de raio 2.
     // Teste se dentro do objeto retornado, a função retorna uma `key` com `value` igual à área correta para um círculo de raio 3.
     // Teste se a função retorna, em um objeto, os dados corretos de um círculo de raio 3.
+    // Testes:
+    expect(circle(!'number')).toBe(undefined);
+    expect(typeof circle(1)).toBe('object');
+    expect(Object.keys(circle(1)).length).toBe(3);
+    expect(circle()).toBe(undefined);
+    expect(circle(2).circumference).toBe(6.28*2);
+    expect(circle(3).area).toBeCloseTo(28.26);
+    expect(circle(3).radius).toBe(3);
+    expect(circle(3).area).toBeCloseTo(28.26);
+    expect(circle(3).circumference).toBe(18.84);
   });
 });
